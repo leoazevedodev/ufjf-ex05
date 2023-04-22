@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1682183102 source:c:\users\leona\documents\ufjf\ed\ex05 - matrizes\main.cpp
+	<iostream>
+	"MatrizLin.h"
+
+1682184218 c:\users\leona\documents\ufjf\ed\ex05 - matrizes\matrizlin.h
+
+1682184214 source:c:\users\leona\documents\ufjf\ed\ex05 - matrizes\matrizlin.cpp
+	<iostream>
+	<cstdlib>
+	"MatrizLin.h"
+

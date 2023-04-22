@@ -15,6 +15,32 @@ bool quadaraSimetrica(MatrizLin *mat)
     }
 }
 
+float* prodMatVetor(MatrizLin *m, float *v)
+{
+    float *resultado = new float[m->getNl()];
+    v = new float[m->getNc()];
+
+    for(int i = 0; i < m->getNc(); i++)
+    {
+        v[i] = i+1;
+    }
+
+    for(int i = 0; i < m->getNl(); i++)
+    {
+        float soma = 0;
+
+        for(int j = 0; j < m->getNc(); j++)
+        {
+            soma = soma + m->get(i, j) * v[j];
+            //cout << "( " << i << " )" << "( " << j << " )" << m->get(i, j) * v[j] << " ";
+        }
+        resultado[i] = soma;
+    }
+
+    return resultado;
+
+}
+
 int main()
 {
     int m = 7, n = 8;
@@ -34,7 +60,16 @@ int main()
 
     cout << "O Maior valor e: " << mat.encontramaior() << endl;
 
-
     mat.transposta();
+
+    float valores;
+    float *resutladofinal = prodMatVetor(&mat, &valores);
+
+    for(int i = 0; i < mat.getNl(); i++)
+    {
+        cout << endl;
+        cout << "----------------" << endl;
+        cout << resutladofinal[i] << " ";
+    }
     return 0;
 }
